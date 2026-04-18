@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Throng — Orchestrate AI coding agents</title>
+  <meta name="description" content="Throng orchestrates Claude Code sessions across your software projects. Coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fg: #d4d4d8;
+      --fg-dim: #52525b;
+      --fg-bright: #fafafa;
+      --accent: #a78bfa;
+      --bg: #0c0c0e;
+      --bg-subtle: #18181b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Newsreader', Georgia, serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Subtle grid texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--bg-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-subtle) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* Glow */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    main {
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .wordmark {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--fg-bright);
+      margin-bottom: 1.5rem;
+      animation: arrive 1s ease-out both;
+    }
+
+    .wordmark span {
+      color: var(--accent);
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-style: italic;
+      color: var(--fg-dim);
+      max-width: 30ch;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+      animation: arrive 1s ease-out 0.15s both;
+    }
+
+    .status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg-dim);
+      animation: arrive 1s ease-out 0.3s both;
+    }
+
+    .status::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 0.6em;
+      vertical-align: middle;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes arrive {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 class="wordmark">throng<span>.</span>dev</h1>
+    <p class="tagline">Orchestrate AI coding agents across your projects</p>
+    <p class="status">Coming soon</p>
+  </main>
+</body>
+</html>
